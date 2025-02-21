@@ -1,0 +1,173 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffcc80;
+  transition: background-color 0.5s;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ffeb3b;
+  color: black;
+  border-radius: 10px;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+/* Animação de elevação para a seção de recursos */
+.recursos {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.recursos:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #ffe082;
+}
+
+/* Animação panorâmica para as citações */
+.citacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background-color: #ffd54f;
+  border-radius: 10px;
+}
+
+.citacao-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animação panorâmica horizontal para os profissionais */
+.profissionais-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.profissional-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  opacity: 0;
+}
+
+.profissional-card.left {
+  transform: translateX(-100%);
+  animation: slideInLeft 1s forwards;
+}
+
+.profissional-card.right {
+  transform: translateX(100%);
+  animation: slideInRight 1s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Formulário impressionante */
+.contato {
+  background-color: #ff9800;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(255, 152, 0, 0.3);
+  transition: background-color 0.5s;
+}
+
+form input,
+form textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button {
+  background-color: black;
+  color: #ffeb3b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #ffeb3b;
+  color: black;
+}
+
+/* Mudança de cor ao interagir com o formulário */
+.contato:hover ~ .recursos,
+.contato:hover ~ .citacoes,
+.contato:hover ~ .profissionais {
+  background-color: #ffcc80;
+}
